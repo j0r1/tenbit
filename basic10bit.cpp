@@ -19,8 +19,8 @@ using namespace std;
 
 void ErrorExit(int exitCode, const string &msg)
 {
-	cerr << endl << "ERROR: " << msg << endl << endl;
-	cerr << "Exiting..." << endl;
+	cout << endl << "ERROR: " << msg << endl << endl;
+	cout << "Exiting..." << endl;
 	Sleep(2000);
 	exit(exitCode);
 }
@@ -334,7 +334,7 @@ int main()
 	{
 		if (bRet == -1)
 		{
-			cerr << "WARNING: Unexpected return value from GetMessage" << bRet << endl;
+			cout << "WARNING: Unexpected return value from GetMessage" << bRet << endl;
 		}
 		else
 		{
