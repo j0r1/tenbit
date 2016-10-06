@@ -210,6 +210,10 @@ namespace mygl
 		// Now we're able to get the rest of the function pointers
 		internal_setupGLFunctions2();
 
+		cout << "VERSION(1): " << mygl::glGetString(GL_VERSION) << endl;
+		cout << "VENDOR(1): " << mygl::glGetString(GL_VENDOR) << endl;
+		cout << "RENDERER(1): " << mygl::glGetString(GL_RENDERER) << endl;
+
 		wglDeleteContext(rc);
 		DeleteDC(hDC);
 		DestroyWindow(hWnd);
@@ -308,8 +312,9 @@ int main()
 	if (!mygl::wglMakeCurrent(hDC, globalContext))
 		ErrorExit(ERRCODE_CANTMAKECONTEXTCURRENT, "Unable to make gl context current");
 
-	cout << "VERSION: " << mygl::glGetString(GL_VERSION) << endl;
-	cout << "VENDOR: " << mygl::glGetString(GL_VENDOR) << endl;
+	cout << "VERSION(2): " << mygl::glGetString(GL_VERSION) << endl;
+	cout << "VENDOR(2): " << mygl::glGetString(GL_VENDOR) << endl;
+	cout << "RENDERER(2): " << mygl::glGetString(GL_RENDERER) << endl;
 
 	// Let's see how many R, G and B bits we're using according to OpenGL
 	int r = 0, g = 0, b = 0, a = 0;
